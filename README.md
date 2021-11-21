@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 
+## User Account List
+
+userName: superadmin1 role: Roles.SuperAdmin
+
+userName: admin1 role: Roles.Admin
+
+userName: admin2 role: Roles.Admin
+
+userName: customer1 role: Roles.Customer
+
+userName: customer2 role: Roles.Customer
+
+userName: customer3 role: Roles.Customer
+
+## Running the project
+
+1. Download project as [zip](https://github.com/eXalife/four-d-app/archive/refs/heads/master.zip) or `clone` the project
+2. Open a terminal or command line interface on the same level
+3. Run `npm install`
+4. Run `ng serve`
+5. Navigate to `http://localhost:4200/`
+6. [User Account List](#user-account-list) can be used for login.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
