@@ -1,0 +1,27 @@
+.user-list-container {
+  width: 100%;
+
+  @media screen and (min-width: 992px) {
+    max-width: 50vw;
+  }
+
+  > mat-card {
+    margin: 1rem;
+
+    .user-name {
+      word-break: break-word;
+    }
+
+    .add-row {
+      padding: 0 16px;
+    }
+
+    .mat-list-base .mat-subheader {
+      font-size: 25px;
+    }
+
+    .mat-list-base .mat-list-item {
+      border-bottom: inset;
+    }
+  }
+}

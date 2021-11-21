@@ -1,0 +1,15 @@
+.home-container {
+  mat-card {
+    margin: 1rem;
+    .home-image {
+      width: 100%;
+      height: auto;
+      max-height: 66vh;
+    }
+    @media screen and (min-width: 1280px) {
+      p {
+        max-width: 60vw;
+      }
+    }
+  }
+}

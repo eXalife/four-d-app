@@ -1,0 +1,23 @@
+<form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div mat-dialog-content fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-form-field appearance="fill">
+            <mat-label>{{'user_name' | translate}}</mat-label>
+            <input matInput formControlName="userName" maxlength="32">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'role' | translate}}</mat-label>
+            <mat-select formControlName="role">
+                <mat-option [value]="roles.Customer">{{roles.Customer}}</mat-option>
+                <mat-option [value]="roles.Admin" *ngIf="currentUser?.role === roles.SuperAdmin">{{roles.Admin}}
+                </mat-option>
+                <mat-option [value]="roles.SuperAdmin" *ngIf="currentUser?.role === roles.SuperAdmin">
+                    {{roles.SuperAdmin}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
+        <button type="button" mat-button (click)="onNoClick()" color="warn">{{'cancel' | translate}}</button>
+        <button type="submit" mat-button [disabled]="userForm.invalid" cdkFocusInitial color="primary">{{'save' |
+            translate}}</button>
+    </div>
+</form>

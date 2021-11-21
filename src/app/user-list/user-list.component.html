@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div class="user-list-container">
+        <mat-card>
+            <mat-list fxFill>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <h1 matSubheader>{{'user_list' | translate}}</h1>
+                </div>
+                <mat-list-item *ngFor="let user of filteredUsers">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" layout-wrap fxFill>
+                        <div fxFlex="45" class="user-name">{{user.userName}}</div>
+                        <div fxFlex="35" class="user-role">{{user.role}}</div>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <button mat-icon-button (click)="editUser(user)">
+                                <mat-icon matListIcon color="accent">edit</mat-icon>
+                            </button>
+                            <button mat-icon-button (click)="removeUser(user)">
+                                <mat-icon matListIcon color="warn">delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+            <div class="add-row" fxLayout="row" fxLayoutAlign="end center">
+                <button mat-icon-button (click)="addUser()">
+                    <mat-icon matListIcon color="primary">add</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" cla fxFlexFill>
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="mat-app-background" fxFlexFill>
+        <mat-card fxLayout="column" fxLayoutAlign="center center">
+            <h1>{{'login' | translate}}</h1>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'user_name' | translate}}</mat-label>
+                <input matInput formControlName="userName" maxlength="32">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="full-width" [disabled]="loginForm.invalid">{{'login' |
+                translate}}</button>
+        </mat-card>
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>{{'language' | translate}}</mat-label>
+                <mat-select (selectionChange)="setLanguage($event.value)" [value]="getLanguage()">
+                    <mat-option value="en">
+                        English
+                    </mat-option>
+                    <mat-option value="tr">
+                        Türkçe
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-slide-toggle [(ngModel)]="isDarkModeChecked" [ngModelOptions]="{standalone: true}"
+                (change)="setTheme($event.checked)">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">dark_mode</mat-icon>
+            </mat-slide-toggle>
+        </div>
+    </div>
+</form>
